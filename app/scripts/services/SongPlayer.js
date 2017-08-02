@@ -5,10 +5,15 @@
 
          var currentSong = null;
          /**
- * @desc Buzz object audio file
- * @type {Object}
- */
+         * @desc Buzz object audio file
+         * @type {Object}
+         */
          var currentBuzzObject = null;
+
+         var playSong = function(song){
+           currentBuzzObject.play();
+           song.playing = true;
+         }
 
          /**
           * @function setSong
@@ -33,8 +38,8 @@
          if (currentSong !== song) {
 
              setSong(song);
-             currentBuzzObject.play();
-             song.playing = true;
+             playSong(song);
+
      } else if (currentSong === song) {
          if (currentBuzzObject.isPaused()) {
              currentBuzzObject.play();
@@ -49,6 +54,7 @@
 
          return SongPlayer;
     }
+
 
     angular
         .module('blocJams')
