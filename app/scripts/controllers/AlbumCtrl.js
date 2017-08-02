@@ -8,4 +8,6 @@
     .module('blocJams')
     .controller('AlbumCtrl', ['Fixtures', AlbumCtrl]);
 
-})();
+})(); // IIFE – immediately invoked function expression
+
+// orthogonality - decoupling - modular
